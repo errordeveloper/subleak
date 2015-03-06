@@ -131,6 +131,8 @@ Vagrant.configure("2") do |config|
       end
 
       config.vm.provision :shell, :path => "test.sh", :privileged => true
+      config.vm.provision :file, :source => "mcsend", :destination => "/home/core/mcsend"
+      config.vm.provision :file, :source => "mcreceive", :destination => "/home/core/mcreceive"
 
     end
   end
