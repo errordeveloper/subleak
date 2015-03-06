@@ -39,5 +39,9 @@ ip netns exec nsA ip link set vtestA1 up
 ip netns exec nsB ip link set vtestB1 up
 ip netns exec nsC ip link set vtestC1 up
 
+ip netns exec nsA ip route add 224.0.0.0/8 dev vtestA1
+ip netns exec nsB ip route add 224.0.0.0/8 dev vtestB1
+ip netns exec nsC ip route add 224.0.0.0/8 dev vtestC1
+
 iptables -t nat -A POSTROUTING -o brm -j MASQUERADE
 iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
