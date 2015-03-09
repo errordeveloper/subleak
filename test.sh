@@ -8,10 +8,7 @@ ip link set dev vtestA0 up
 ip link set dev vtestB0 up
 ip link set dev vtestC0 up
 
-ip tuntap add tapm mode tap
-ip link set dev tapm up
 ip link add brm type bridge
-ip link set tapm master brm
 
 ip link set vtestA0 master brm
 ip link set vtestB0 master brm
